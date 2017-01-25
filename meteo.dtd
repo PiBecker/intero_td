@@ -1,0 +1,21 @@
+<!ELEMENT previsions (request_state, source, message, request_time, request_key, model_run, echeance) >
+
+<!ELEMENT request_state>
+<!ELEMENT source>
+<!ELEMENT message>
+<!ELEMENT request_time>
+<!ELEMENT request_key>
+<!ELEMENT model_run>
+<!ELEMENT echeance
+            (temperature,
+             presion,
+             plus interval,
+             pluie convective,
+             humidite,
+             vent_moyen,
+             vent_rafales,
+             vent_direction,
+             iso_zero,
+             risque_neige,
+             cape,
+             nebulosite)>
