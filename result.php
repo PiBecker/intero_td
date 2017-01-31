@@ -119,12 +119,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST) && !empty($_POST['ad
       </tr>');
       for($i = 0;  $i < sizeof($stations); $i++) {
         echo('<tr>');
-        echo('<td>' . $stations[$i]['name'] . '</td>');
-        echo('<td>' . $stations[$i]['number'] . '</td>');
         if($stations[$i]['places_availables'] == 0){
+          echo('<td style="color:red;"><b>' . $stations[$i]['name'] . '</b></td>');
+          echo('<td style="color:red;"><b>' . $stations[$i]['number'] . '</b></td>');
           echo('<td style="color:red;"><b>' . $stations[$i]['places_availables'] . '</b></td>');
         }
         else{
+          echo('<td>' . $stations[$i]['name'] . '</td>');
+          echo('<td>' . $stations[$i]['number'] . '</td>');
           echo('<td>' . $stations[$i]['places_availables'] . '</td>');
         }
 
