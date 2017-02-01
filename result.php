@@ -109,7 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST) && !empty($_POST['ad
     }
     else{
       echo("<h3 class='text-center'>Météo</h3><br>");
-      $meteo_xml = simplexml_load_string($meteo_raw);
       // $url_meteo_meteo = 'http://www.infoclimat.fr/public-api/mixed/iframeSLIDE?_ll='.$coord["latitude"].','.$coord["longitude"].'&_inc=WyJQYXJpcyIsIjQyIiwiMjk4ODUwNyIsIkZSIl0=&_auth=AxkAFwd5BiRWe1RjAXdVfABoAjdbLVB3US0AYw9qVyoIY1AxAGBTNQVrA34HKAUzUn9XNF5lBDQGbQtzWihSMwNpAGwHbAZhVjlUMQEuVX4ALgJjW3tQd1EzAGcPa1cqCGlQNQBkUy8FawNhBzIFL1JiVyhefgQ9BmELZFoyUjYDaQBhB2QGY1YxVCkBLlVkADsCalsyUG5RZABnD2RXZwhsUGcAYVMyBWMDfwc%2BBTlSaFc%2BXmYENAZiC29aKFIuAxkAFwd5BiRWe1RjAXdVfABmAjxbMA%3D%3D&_c=1c8b9c606cfee533f2eaa85bfc4856e9';
       // echo('<div class="text-center">');
       // echo('<iframe seamless width="888" height="400" frameborder="0" src="'.$url_meteo_meteo.'"></iframe>');
@@ -117,9 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST) && !empty($_POST['ad
       // echo('</div>');
       /***************** INFO CLIMAT *****************/
       // url xml http://www.infoclimat.fr/public-api/gfs/xml?_ll=48.8713,2.32143&_auth=ARsDFFIsBCZRfFtsD3lSe1Q8ADUPeVRzBHgFZgtuAH1UMQNgUTNcPlU5VClSfVZkUn8AYVxmVW0Eb1I2WylSLgFgA25SNwRuUT1bPw83UnlUeAB9DzFUcwR4BWMLYwBhVCkDb1EzXCBVOFQoUmNWZlJnAH9cfFVsBGRSPVs1UjEBZwNkUjIEYVE6WyYPIFJjVGUAZg9mVD4EbwVhCzMAMFQzA2JRMlw5VThUKFJiVmtSZQBpXGtVbwRlUjVbKVIuARsDFFIsBCZRfFtsD3lSe1QyAD4PZA%3D%3D&_c=19f3aa7d766b6ba91191c8be71dd1ab2
-
-          $meteo_raw = file_get_contents("http://www.infoclimat.fr/public-api/gfs/xml?_ll=".$coord["latitude"].",".$coord["longitude"]."&_auth=ARsDFFIsBCZRfFtsD3lSe1Q8ADUPeVRzBHgFZgtuAH1UMQNgUTNcPlU5VClSfVZkUn8AYVxmVW0Eb1I2WylSLgFgA25SNwRuUT1bPw83UnlUeAB9DzFUcwR4BWMLYwBhVCkDb1EzXCBVOFQoUmNWZlJnAH9cfFVsBGRSPVs1UjEBZwNkUjIEYVE6WyYPIFJjVGUAZg9mVD4EbwVhCzMAMFQzA2JRMlw5VThUKFJiVmtSZQBpXGtVbwRlUjVbKVIuARsDFFIsBCZRfFtsD3lSe1QyAD4PZA%3D%3D&_c=19f3aa7d766b6ba91191c8be71dd1ab2");
-          $meteo_xml = simplexml_load_string($meteo_raw);
+      $meteo_raw = file_get_contents("http://www.infoclimat.fr/public-api/gfs/xml?_ll=".$coord["latitude"].",".$coord["longitude"]."&_auth=ARsDFFIsBCZRfFtsD3lSe1Q8ADUPeVRzBHgFZgtuAH1UMQNgUTNcPlU5VClSfVZkUn8AYVxmVW0Eb1I2WylSLgFgA25SNwRuUT1bPw83UnlUeAB9DzFUcwR4BWMLYwBhVCkDb1EzXCBVOFQoUmNWZlJnAH9cfFVsBGRSPVs1UjEBZwNkUjIEYVE6WyYPIFJjVGUAZg9mVD4EbwVhCzMAMFQzA2JRMlw5VThUKFJiVmtSZQBpXGtVbwRlUjVbKVIuARsDFFIsBCZRfFtsD3lSe1QyAD4PZA%3D%3D&_c=19f3aa7d766b6ba91191c8be71dd1ab2");
+      $meteo_xml = simplexml_load_string($meteo_raw);
 
 
     }
